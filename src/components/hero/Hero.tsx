@@ -1,20 +1,15 @@
+import Image from "next/image";
 import { catalogoUrl, mlUrl } from "@/config/links";
 
 export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex items-center bg-brand-dark"
+      className="min-h-screen flex flex-col md:flex-row bg-brand-dark"
     >
-      {/* Placeholder background - replace with next/image */}
-      <div className="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-dark-2 to-[#0a0a0a]" />
-
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
-
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pt-20 w-full">
-        <div className="max-w-2xl text-center md:text-left">
+      {/* Left: text */}
+      <div className="flex-1 flex items-center justify-center px-8 pt-28 pb-16 md:pt-20 md:px-16">
+        <div className="max-w-lg w-full">
           <p className="text-brand-yellow font-display font-semibold text-lg tracking-widest uppercase mb-2">
             Gasista Matriculado · CABA y GBA
           </p>
@@ -26,7 +21,7 @@ export default function Hero() {
             <br className="hidden md:block" />
             Seguridad, calidad y experiencia garantizadas.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={catalogoUrl}
               target="_blank"
@@ -41,10 +36,22 @@ export default function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 border-2 border-white text-white font-display font-bold text-lg tracking-wide rounded hover:border-brand-yellow hover:text-brand-yellow transition-colors duration-200"
             >
-              Ver Productos en Mercado Libre
+              Ver en Mercado Libre
             </a>
           </div>
         </div>
+      </div>
+
+      {/* Right: photo */}
+      <div className="flex-1 relative min-h-72 md:min-h-screen">
+        <Image
+          src="/fotoPortada.jpeg"
+          alt="Insagas portada"
+          fill
+          priority
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
       </div>
 
       {/* Scroll indicator */}

@@ -128,7 +128,7 @@ export const works: WorkItem[] = [
 
 export const aboutContent: AboutContent = {
   description:
-    "Somos Insagas, empresa familiar con más de 10 años de experiencia en instalaciones y reparaciones de gas en la Ciudad de Buenos Aires y el Gran Buenos Aires. Trabajamos con compromiso, responsabilidad y los más altos estándares de seguridad.",
+    "Somos Insagas, empresa especializada en servicios integrales de gas para matriculados y particulares. Realizamos presentaciones ante Metrogas y Naturgy, asesoramiento y consultoría técnica, confección de planos y gestión de trámites ante distribuidoras. Además, ofrecemos venta de materiales para instalaciones de gas natural: piezas epoxi, reguladores y válvulas solenoides para uso comercial e industrial. Consultanos por presupuestos, asistencia técnica o catálogo de productos.",
   matricula: "XXXXXXXXX",
   zonaCobertura: "CABA y Gran Buenos Aires",
   copyrightYear: 2025,
