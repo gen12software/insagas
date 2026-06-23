@@ -4,6 +4,7 @@ export interface Service {
   description: string;
   icon: string;
   whatsappMessage: string;
+  cta?: string;
 }
 
 export interface WorkItem {
@@ -22,4 +23,15 @@ export interface AboutContent {
   address: string;
   horarios: string;
   horarioAtencionPresencial: string;
+}
+
+export interface Stat {
+  id: string;
+  value: string;
+  label: string;
+}
+
+export interface AboutHighlight {
+  title: string;
+  subtitle: string;
 }

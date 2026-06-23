@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { whatsappUrl } from "@/config/links";
 
 const navLinks = [
@@ -18,62 +17,61 @@ export default function Navbar() {
   const handleLinkClick = () => setIsOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-brand-dark-2/95 backdrop-blur-sm border-b border-white/10">
-      <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#inicio" className="flex items-center gap-2 shrink-0" aria-label="Insagas - Inicio">
-          <Image
-            src="/insagas-logo.png"
-            alt="Insagas"
-            width={200}
-            height={56}
-            priority
-            className="h-14 w-auto"
-          />
+    <nav className="sticky top-0 z-50 h-16 border-b border-line-mid bg-[rgba(22,22,22,0.94)] backdrop-blur-[16px]">
+      <div className="mx-auto flex h-full max-w-content items-center justify-between px-6 md:px-12">
+        {/* Logo lockup */}
+        <a
+          href="#inicio"
+          className="flex shrink-0 items-center gap-2"
+          aria-label="Insagas - Inicio"
+        >
+          <LogoMark className="h-5 w-auto" />
+          <span className="font-display text-[17px] font-bold uppercase tracking-tight text-ink-primary">
+            insagas
+          </span>
         </a>
 
         {/* Desktop nav — centrado */}
-        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-body text-white/80 hover:text-brand-yellow transition-colors duration-200"
+              className="text-[13px] font-medium text-[rgba(240,237,232,0.55)] transition-colors duration-200 hover:text-ink-primary"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* WhatsApp — derecha */}
-        <div className="hidden md:flex items-center">
+        {/* CTA WhatsApp — derecha */}
+        <div className="hidden items-center md:flex">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="WhatsApp"
-            className="flex items-center gap-2 text-sm font-body text-brand-yellow hover:text-brand-yellow-light transition-colors duration-200"
+            className="flex items-center gap-2 rounded bg-accent px-[18px] py-[9px] font-display text-[13px] font-bold uppercase tracking-wide text-black transition-colors duration-200 hover:bg-accent-hover"
           >
-            <WhatsAppIcon className="w-5 h-5" />
-            <span className="hidden lg:inline">11-3678-6783</span>
+            <WhatsAppIcon className="h-4 w-4" />
+            Pedí presupuesto
           </a>
         </div>
 
         {/* Mobile: WhatsApp icon + hamburger */}
-        <div className="flex md:hidden items-center gap-3">
+        <div className="flex items-center gap-3 md:hidden">
           <a
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="WhatsApp"
-            className="text-brand-yellow"
+            className="text-accent"
           >
-            <WhatsAppIcon className="w-6 h-6" />
+            <WhatsAppIcon className="h-6 w-6" />
           </a>
           <button
             onClick={() => setIsOpen((o) => !o)}
             aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
-            className="text-white p-1"
+            className="p-1 text-ink-primary"
           >
             {isOpen ? <CloseIcon /> : <HamburgerIcon />}
           </button>
@@ -82,13 +80,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-brand-dark-2 border-t border-white/10 px-4 py-4 flex flex-col gap-4">
+        <div className="flex flex-col gap-4 border-t border-line-mid bg-bg-base px-6 py-4 md:hidden">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={handleLinkClick}
-              className="text-base font-body text-white/80 hover:text-brand-yellow transition-colors duration-200 py-1"
+              className="py-1 text-base font-medium text-[rgba(240,237,232,0.55)] transition-colors duration-200 hover:text-ink-primary"
             >
               {link.label}
             </a>
@@ -96,6 +94,21 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+  );
+}
+
+function LogoMark({ className }: { className?: string }) {
+  // Barra "L" amarilla de la marca insagas
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 16 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M3 0H6V17H15V20H3V0Z" fill="#f5c518" />
+    </svg>
   );
 }
 
@@ -114,7 +127,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 function HamburgerIcon() {
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   );
@@ -122,7 +135,7 @@ function HamburgerIcon() {
 
 function CloseIcon() {
   return (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
     </svg>
   );

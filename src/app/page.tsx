@@ -1,8 +1,10 @@
 import Navbar from "@/components/navbar/Navbar";
 import Hero from "@/components/hero/Hero";
+import StatsStrip from "@/components/stats/StatsStrip";
 import ServicesSection from "@/components/services/ServicesSection";
-import WorksCarousel from "@/components/works/WorksCarousel";
+import WorksSection from "@/components/works/WorksSection";
 import AboutSection from "@/components/about/AboutSection";
+import ContactSection from "@/components/contact/ContactSection";
 import Footer from "@/components/footer/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
@@ -11,9 +13,11 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <StatsStrip />
       <ServicesSection />
-      <WorksCarousel />
+      <WorksSection />
       <AboutSection />
+      <ContactSection />
       <Footer />
       <WhatsAppFloat />
     </main>

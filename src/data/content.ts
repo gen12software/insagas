@@ -1,4 +1,26 @@
-import type { Service, WorkItem, AboutContent } from "@/types";
+import type { Service, WorkItem, AboutContent, Stat, AboutHighlight } from "@/types";
+
+export const stats: Stat[] = [
+  { id: "instalaciones", value: "+500", label: "Instalaciones" },
+  { id: "anios", value: "+15", label: "Años de experiencia" },
+  { id: "zonas", value: "2", label: "Zonas — CABA y GBA" },
+  { id: "matriculado", value: "★", label: "Gasista matriculado" },
+];
+
+export const aboutHighlights: AboutHighlight[] = [
+  {
+    title: "Gasistas matriculados",
+    subtitle: "Habilitados para presentaciones ante Metrogas y Naturgy",
+  },
+  {
+    title: "Cobertura CABA y GBA",
+    subtitle: "Atención en Capital Federal y Gran Buenos Aires",
+  },
+  {
+    title: "Trabajo garantizado",
+    subtitle: "Materiales de primera calidad y normativa vigente",
+  },
+];
 
 export const services: Service[] = [
   {
@@ -7,6 +29,7 @@ export const services: Service[] = [
     description:
       "Rehabilitación de servicios de gas cortados o suspendidos, dejando la instalación apta y habilitada nuevamente.",
     icon: "flame",
+    cta: "Rehabilitar mi gas",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Rehabilitaciones de gas.",
   },
   {
@@ -15,6 +38,7 @@ export const services: Service[] = [
     description:
       "Venta de artefactos, repuestos y accesorios de gas de primeras marcas para tu hogar o comercio.",
     icon: "cart",
+    cta: "Ver artículos",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Venta de artículos de gas.",
   },
   {
@@ -23,6 +47,7 @@ export const services: Service[] = [
     description:
       "Confección de planos de instalaciones de gas para presentar ante las distribuidoras y entes reguladores.",
     icon: "document",
+    cta: "Pedir un plano",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Planos de gas.",
   },
   {
@@ -31,6 +56,7 @@ export const services: Service[] = [
     description:
       "Replanteo de instalaciones existentes o nuevas, definiendo recorridos y ubicación de artefactos.",
     icon: "ruler",
+    cta: "Solicitar replanteo",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Replanteos.",
   },
   {
@@ -39,6 +65,7 @@ export const services: Service[] = [
     description:
       "Adecuación de instalaciones a la normativa vigente para garantizar seguridad y habilitación.",
     icon: "wrench",
+    cta: "Adecuar mi instalación",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Adecuaciones de gas.",
   },
   {
@@ -47,6 +74,7 @@ export const services: Service[] = [
     description:
       "Instalación y conexión de cocinas, termotanques, calefones, estufas y demás artefactos a gas.",
     icon: "settings",
+    cta: "Colocar un artefacto",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Colocación de artefactos.",
   },
   {
@@ -55,6 +83,7 @@ export const services: Service[] = [
     description:
       "Gestión integral de trámites ante Metrogas, Naturgy y entes reguladores: altas, habilitaciones y certificaciones.",
     icon: "clipboard",
+    cta: "Gestionar mi trámite",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Trámites de gas.",
   },
   {
@@ -63,6 +92,7 @@ export const services: Service[] = [
     description:
       "Instalaciones de gas domiciliarias, comerciales e industriales. Trabajo garantizado con materiales de primera calidad.",
     icon: "building",
+    cta: "Cotizar instalación",
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Instalaciones domiciliarias, comerciales o industriales.",
   },
 ];
@@ -125,6 +155,12 @@ export const works: WorkItem[] = [
     image: null,
   },
 ];
+
+// Fotos reales de trabajos realizados (en public/trabajosRealizados/)
+export const workPhotos: string[] = Array.from(
+  { length: 28 },
+  (_, i) => `/trabajosRealizados/trabajo-${String(i + 1).padStart(2, "0")}.jpg`
+);
 
 export const aboutContent: AboutContent = {
   description:

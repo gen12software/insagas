@@ -8,10 +8,10 @@ export default function WhatsAppFloat() {
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       title="Contactar por WhatsApp"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-brand-yellow rounded-full flex items-center justify-center shadow-lg hover:bg-brand-yellow-light transition-colors duration-200 animate-pulse-slow"
+      className="fixed bottom-7 right-7 z-[99] flex h-[52px] w-[52px] items-center justify-center rounded-full bg-whatsapp shadow-[0_4px_20px_rgba(37,211,102,0.35)] transition-transform duration-200 hover:scale-110"
     >
       <svg
-        className="w-8 h-8 text-brand-dark"
+        className="h-[26px] w-[26px] text-white"
         viewBox="0 0 24 24"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"

@@ -1,57 +1,56 @@
 import Image from "next/image";
-import { aboutContent } from "@/data/content";
+import { aboutContent, aboutHighlights } from "@/data/content";
 import FadeIn from "@/components/ui/FadeIn";
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="py-6 bg-brand-dark">
-      <div className="max-w-7xl mx-auto px-4">
-        <FadeIn className="mb-2 text-center md:text-left">
-          <p className="text-brand-yellow font-display font-semibold tracking-widest uppercase text-sm mb-2">
+    <section id="nosotros" className="bg-bg-base py-section">
+      <div className="mx-auto grid max-w-content grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-20 md:px-20">
+        {/* Text column */}
+        <FadeIn className="flex flex-col">
+          <p className="mb-4 font-display text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">
             Quiénes somos
           </p>
-          <h2 className="font-display font-bold text-5xl md:text-6xl text-white tracking-tight">
-            NOSOTROS
+          <h2 className="font-display text-5xl font-extrabold uppercase leading-[0.92] tracking-[-0.01em] text-white md:text-[54px]">
+            Nosotros
           </h2>
+          <p className="mt-6 text-[15px] leading-[1.75] text-ink-body">
+            {aboutContent.description}
+          </p>
+
+          <div className="mt-8 flex flex-col">
+            {aboutHighlights.map((h, i) => (
+              <div
+                key={h.title}
+                className={`flex items-start gap-4 py-4 ${
+                  i !== 0 ? "border-t border-line" : ""
+                }`}
+              >
+                <span className="mt-1 min-h-[36px] w-[2px] shrink-0 bg-accent" />
+                <div>
+                  <p className="font-display text-[15px] font-bold text-ink-primary">
+                    {h.title}
+                  </p>
+                  <p className="mt-1 text-[13px] text-ink-dim">{h.subtitle}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-[13px] text-ink-muted">
+            Gasista matriculado N° {aboutContent.matricula} · {aboutContent.zonaCobertura}
+          </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          {/* Text column */}
-          <div className="flex flex-col gap-6">
-            <p className="text-white/70 font-body text-lg leading-relaxed">
-              {aboutContent.description}
-            </p>
-
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-brand-yellow rounded-full shrink-0" />
-                <p className="text-white/70 font-body text-base">
-                  <span className="text-white font-semibold">Gasistas matriculados</span> — Matrícula N° {aboutContent.matricula}
-                </p>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="w-1.5 h-1.5 bg-brand-yellow rounded-full shrink-0" />
-                <p className="text-white/70 font-body text-base">
-                  <span className="text-white font-semibold">Zona de cobertura:</span> {aboutContent.zonaCobertura}
-                </p>
-              </div>
-            </div>
-
-            {/* Platinum ML badge */}
-            <div className="inline-flex items-center gap-3 bg-brand-yellow/10 border border-brand-yellow/30 rounded-lg px-4 py-3 self-start">
-              <svg className="w-6 h-6 text-brand-yellow shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-              </svg>
-              <span className="font-display font-bold text-brand-yellow tracking-wide text-sm uppercase">
-                Vendedores Platinum — Mercado Libre
-              </span>
-            </div>
-          </div>
-
-          {/* Photo */}
-          <div className="relative rounded-lg overflow-hidden aspect-square border border-white/10">
-            <Image src="/fotoPortada.jpeg" alt="Local Insagas" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
-          </div>
+        {/* Photo portrait 4:5 */}
+        <div className="relative aspect-[4/5] overflow-hidden border border-line">
+          <Image
+            src="/fotoPortada.jpeg"
+            alt="Local de Insagas"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
         </div>
       </div>
     </section>

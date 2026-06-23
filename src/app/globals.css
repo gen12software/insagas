@@ -7,5 +7,5 @@ html {
 }
 
 body {
-  @apply bg-brand-dark text-white font-body;
+  @apply bg-bg-base text-ink-primary font-sans;
 }

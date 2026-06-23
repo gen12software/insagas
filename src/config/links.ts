@@ -4,7 +4,7 @@ export const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComp
 
 export const mlUrl = "https://www.mercadolibre.com.ar";
 export const instagramUrl = "https://www.instagram.com/insagas";
-export const catalogoUrl = "https://url-shortener.me/M5TE";
+export const catalogoUrl = "https://drive.google.com/file/d/15cITwM5C8xdnwLhuJhPbE4Dydx7Vv-ud/view";
 export const contactEmailVentas = "insagas.ventas@gmail.com";
 export const contactEmailInstalaciones = "insagas.instalaciones@gmail.com";
 export const phone = "4671-6750";
