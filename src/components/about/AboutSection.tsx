@@ -38,7 +38,7 @@ export default function AboutSection() {
           </div>
 
           <p className="mt-6 text-[13px] text-ink-muted">
-            Gasista matriculado N° {aboutContent.matricula} · {aboutContent.zonaCobertura}
+            Gasista matriculado · {aboutContent.zonaCobertura}
           </p>
         </FadeIn>
 

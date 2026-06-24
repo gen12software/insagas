@@ -10,14 +10,15 @@ export default function Hero() {
       {/* Left: text */}
       <div className="flex flex-col justify-center px-6 py-16 md:py-[88px] md:pl-20 md:pr-0">
         <p className="mb-4 font-display text-[11px] font-semibold uppercase tracking-[0.16em] text-accent">
-          Gasista matriculado · CABA y GBA
+          Distribuidora y gasista matriculado
         </p>
         <h1 className="font-display text-6xl font-extrabold uppercase leading-[0.88] tracking-[-0.02em] text-white md:text-[96px]">
           Insagas
         </h1>
         <p className="mt-6 max-w-[440px] text-[17px] leading-relaxed text-ink-body">
-          Instalaciones, rehabilitaciones y trámites de gas. Seguridad, calidad
-          y experiencia garantizadas para tu hogar o comercio.
+          Brindamos servicios y ventas: instalaciones, rehabilitaciones y
+          trámites de gas. Seguridad, calidad y experiencia garantizadas para tu
+          hogar o comercio.
         </p>
         <div className="mt-8 flex flex-col gap-4 sm:flex-row">
           <a
@@ -46,6 +47,7 @@ export default function Hero() {
           alt="Local de Insagas"
           fill
           priority
+          loading="eager"
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />

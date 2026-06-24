@@ -7,7 +7,7 @@ export default function Footer() {
         <span>
           © {aboutContent.copyrightYear} Insagas. Todos los derechos reservados.
         </span>
-        <span>Gasista Matriculado N° {aboutContent.matricula}</span>
+        <span>Gasista Matriculado</span>
       </div>
     </footer>
   );
