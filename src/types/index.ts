@@ -5,6 +5,7 @@ export interface Service {
   icon: string;
   whatsappMessage: string;
   cta?: string;
+  ctaUrl?: string;
 }
 
 export interface WorkItem {

@@ -16,7 +16,7 @@ export default function WorksSection() {
             Experiencia comprobada
           </p>
           <h2 className="font-display text-5xl font-extrabold uppercase leading-[0.92] tracking-[-0.01em] text-white md:text-[54px]">
-            Trabajos realizados
+            Trabajos destacados
           </h2>
         </FadeIn>
 
@@ -40,6 +40,13 @@ export default function WorksSection() {
             </span>
           </a>
         </div>
+
+        <FadeIn className="mb-10 mt-24 flex items-center gap-4 text-center md:text-left">
+          <h3 className="shrink-0 font-display text-2xl font-extrabold uppercase leading-none tracking-[-0.01em] text-white md:text-[28px]">
+            Galería
+          </h3>
+          <span className="hidden h-px flex-1 bg-line-mid md:block" />
+        </FadeIn>
 
         <WorksPhotoCarousel />
       </div>

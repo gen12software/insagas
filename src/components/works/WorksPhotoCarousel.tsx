@@ -44,7 +44,7 @@ function CarouselRow({ photos, reverse }: RowProps) {
 
 export default function WorksPhotoCarousel() {
   return (
-    <div className="mt-12 flex flex-col gap-[2px]" aria-label="Galería de trabajos realizados">
+    <div className="flex flex-col gap-[2px]" aria-label="Galería de trabajos realizados">
       <CarouselRow photos={rowTop} />
       <CarouselRow photos={rowBottom} reverse />
     </div>

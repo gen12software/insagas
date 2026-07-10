@@ -40,6 +40,12 @@ export const metadata: Metadata = {
     locale: "es_AR",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Insagas | Gasista y Distribuidora de Gas",
+    description:
+      "Gasistas matriculados en CABA y GBA. Instalaciones, reparaciones, mantenimiento y habilitaciones de gas.",
+  },
 };
 
 export default function RootLayout({

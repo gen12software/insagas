@@ -1,7 +1,8 @@
 import type { Service, WorkItem, AboutContent, Stat, AboutHighlight } from "@/types";
+import { catalogoUrl } from "@/config/links";
 
 export const stats: Stat[] = [
-  { id: "instalaciones", value: "+500", label: "Instalaciones" },
+  { id: "instalaciones", value: "+1500", label: "Instalaciones" },
   { id: "anios", value: "+15", label: "Años de experiencia" },
   { id: "zonas", value: "2", label: "Zonas — CABA y GBA" },
   { id: "matriculado", value: "★", label: "Gasista matriculado" },
@@ -36,9 +37,10 @@ export const services: Service[] = [
     id: "venta-articulos",
     title: "Venta de artículos de gas",
     description:
-      "Venta de artefactos, repuestos y accesorios de gas de primeras marcas para tu hogar o comercio.",
+      "Venta de piezas, repuestos y accesorios de gas de primeras marcas para tu hogar o comercio.",
     icon: "cart",
     cta: "Ver artículos",
+    ctaUrl: catalogoUrl,
     whatsappMessage: "Hola! Me comunico desde la web de Insagas. Quisiera consultar sobre Venta de artículos de gas.",
   },
   {

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { whatsappUrl } from "@/config/links";
 
 const navLinks = [
@@ -13,8 +14,29 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeId, setActiveId] = useState("inicio");
 
   const handleLinkClick = () => setIsOpen(false);
+
+  // Scrollspy: marca el link de la sección visible mientras se scrollea
+  useEffect(() => {
+    const sections = navLinks
+      .map((l) => document.getElementById(l.href.slice(1)))
+      .filter((el): el is HTMLElement => el !== null);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveId(entry.target.id);
+        });
+      },
+      // Banda angosta cerca del tope: la sección que la cruza es la activa
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+
+    sections.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 h-16 border-b border-line-mid bg-[rgba(22,22,22,0.94)] backdrop-blur-[16px]">
@@ -22,26 +44,38 @@ export default function Navbar() {
         {/* Logo lockup */}
         <a
           href="#inicio"
-          className="flex shrink-0 items-center gap-2"
+          className="flex shrink-0 items-center"
           aria-label="Insagas - Inicio"
         >
-          <LogoMark className="h-5 w-auto" />
-          <span className="font-display text-[17px] font-bold uppercase tracking-tight text-ink-primary">
-            insagas
-          </span>
+          <Image
+            src="/insagas-logo.png"
+            alt="Insagas"
+            width={1119}
+            height={569}
+            priority
+            className="h-9 w-auto"
+          />
         </a>
 
         {/* Desktop nav — centrado */}
-        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-6 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[13px] font-medium text-[rgba(240,237,232,0.55)] transition-colors duration-200 hover:text-ink-primary"
-            >
-              {link.label}
-            </a>
-          ))}
+        <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-9 md:flex">
+          {navLinks.map((link) => {
+            const isActive = activeId === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "page" : undefined}
+                className={`relative text-[15px] font-medium transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-0 after:h-[2px] after:bg-accent after:transition-all after:duration-200 hover:text-ink-primary hover:after:w-full ${
+                  isActive
+                    ? "text-ink-primary after:w-full"
+                    : "text-[rgba(240,237,232,0.6)] after:w-0"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
 
         {/* CTA WhatsApp — derecha */}
@@ -50,7 +84,7 @@ export default function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded bg-accent px-[18px] py-[9px] font-display text-[13px] font-bold uppercase tracking-wide text-black transition-colors duration-200 hover:bg-accent-hover"
+            className="flex items-center gap-2 rounded bg-accent px-[22px] py-[11px] font-display text-[14px] font-bold uppercase tracking-wide text-black transition-colors duration-200 hover:bg-accent-hover"
           >
             <WhatsAppIcon className="h-4 w-4" />
             Pedí presupuesto
@@ -81,34 +115,27 @@ export default function Navbar() {
       {/* Mobile menu */}
       {isOpen && (
         <div className="flex flex-col gap-4 border-t border-line-mid bg-bg-base px-6 py-4 md:hidden">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={handleLinkClick}
-              className="py-1 text-base font-medium text-[rgba(240,237,232,0.55)] transition-colors duration-200 hover:text-ink-primary"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeId === link.href.slice(1);
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={handleLinkClick}
+                aria-current={isActive ? "page" : undefined}
+                className={`border-l-2 py-1 pl-3 text-base font-medium transition-colors duration-200 hover:text-ink-primary ${
+                  isActive
+                    ? "border-accent text-ink-primary"
+                    : "border-transparent text-[rgba(240,237,232,0.55)]"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
       )}
     </nav>
-  );
-}
-
-function LogoMark({ className }: { className?: string }) {
-  // Barra "L" amarilla de la marca insagas
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 16 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path d="M3 0H6V17H15V20H3V0Z" fill="#f5c518" />
-    </svg>
   );
 }
 
