@@ -11,7 +11,7 @@ export interface Service {
 export interface WorkItem {
   id: string;
   title: string;
-  date: string;
+  place: string;
   description: string;
   image: string | null;
 }

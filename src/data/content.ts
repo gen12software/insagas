@@ -102,59 +102,35 @@ export const services: Service[] = [
 export const works: WorkItem[] = [
   {
     id: "1",
-    title: "Instalación completa en PH",
-    date: "Marzo 2025",
-    description: "Instalación de gas completa para planta baja y primer piso.",
-    image: null,
+    title: "Colector para local gastronómico",
+    place: "Mostaza Aeroparque",
+    description:
+      "Armado de colector de gas para local gastronómico en Aeroparque.",
+    image: "/destacados/MostazaAeroparque.jpeg",
   },
   {
     id: "2",
-    title: "Reparación de calefón",
-    date: "Febrero 2025",
-    description: "Reparación y ajuste de calefón Orbis 14 litros.",
-    image: null,
+    title: "Rehabilitación de edificio",
+    place: "Edificio Caballito",
+    description:
+      "Rehabilitación de instalación para 15 departamentos con cañería exterior montada con silletero.",
+    image: "/destacados/EdificioCaballito.jpeg",
   },
   {
     id: "3",
-    title: "Habilitación comercial",
-    date: "Enero 2025",
-    description: "Gestión de habilitación ante Metrogas para local comercial.",
-    image: null,
+    title: "Cocina gastronómica",
+    place: "Club Náutico Buchardo",
+    description:
+      "Colector en dos direcciones con llaves esféricas paso total y corte general con solenoide Jefferson de 2½\".",
+    image: "/destacados/ClubNauticoBuchardo.jpeg",
   },
   {
     id: "4",
-    title: "Mantenimiento edificio",
-    date: "Diciembre 2024",
-    description: "Mantenimiento preventivo de 12 unidades en edificio de CABA.",
-    image: null,
-  },
-  {
-    id: "5",
-    title: "Instalación termotanque",
-    date: "Noviembre 2024",
-    description: "Cambio e instalación de termotanque Rheem 65 litros.",
-    image: null,
-  },
-  {
-    id: "6",
-    title: "Diagnóstico y reparación",
-    date: "Octubre 2024",
-    description: "Detección de pérdida y reparación de instalación domiciliaria.",
-    image: null,
-  },
-  {
-    id: "7",
-    title: "Instalación cocina industrial",
-    date: "Septiembre 2024",
-    description: "Instalación de cocina industrial para restaurante.",
-    image: null,
-  },
-  {
-    id: "8",
-    title: "Certificación de seguridad",
-    date: "Agosto 2024",
-    description: "Revisión y certificación de instalación para alquiler.",
-    image: null,
+    title: "Habilitación de grupo generador",
+    place: "Casa de campo · Del Viso",
+    description:
+      "Tren de válvulas de 1\" con solenoides, llaves de paso, flexible antivibratorio y manómetros.",
+    image: "/destacados/Casadecampo.jpeg",
   },
 ];
 

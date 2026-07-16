@@ -5,8 +5,8 @@ import WorksPhotoCarousel from "./WorksPhotoCarousel";
 import FadeIn from "@/components/ui/FadeIn";
 
 export default function WorksSection() {
-  // Grid de 6 ítems: 5 trabajos + 1 card de CTA
-  const items = works.slice(0, 5);
+  // Grid de 5 ítems: 4 trabajos + 1 card de CTA
+  const items = works.slice(0, 4);
 
   return (
     <section id="trabajos" className="bg-bg-deep py-section">
@@ -32,9 +32,24 @@ export default function WorksSection() {
             rel="noopener noreferrer"
             className="flex flex-col justify-between border-t-2 border-accent-dim bg-bg-card p-8 transition-colors duration-200 hover:bg-bg-card-alt"
           >
-            <p className="text-[13px] leading-[1.65] text-ink-muted">
-              ¿Tenés un proyecto? Pedinos un presupuesto sin cargo.
-            </p>
+            <div>
+              <p className="font-display text-[11px] font-semibold uppercase tracking-wide text-accent">
+                Tu proyecto
+              </p>
+              <h3 className="mt-2 font-display text-[19px] font-bold uppercase tracking-wide text-ink-primary">
+                ¿Tenés una obra en mente?
+              </h3>
+              <p className="mt-3 text-[13px] leading-[1.65] text-ink-muted">
+                Colectores, rehabilitaciones, habilitaciones y trámites ante
+                Metrogas y Naturgy. Contanos qué necesitás y te pasamos un
+                presupuesto sin cargo.
+              </p>
+              <ul className="mt-4 space-y-2 text-[13px] leading-[1.65] text-ink-muted">
+                <li>— Locales gastronómicos y comercios</li>
+                <li>— Edificios y consorcios</li>
+                <li>— Obras industriales y particulares</li>
+              </ul>
+            </div>
             <span className="mt-6 font-display text-[13px] font-bold uppercase tracking-[0.08em] text-accent">
               Pedir presupuesto →
             </span>
