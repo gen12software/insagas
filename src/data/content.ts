@@ -2,8 +2,8 @@ import type { Service, WorkItem, AboutContent, Stat, AboutHighlight } from "@/ty
 import { catalogoUrl } from "@/config/links";
 
 export const stats: Stat[] = [
-  { id: "instalaciones", value: "+1500", label: "Instalaciones" },
-  { id: "anios", value: "+15", label: "Años de experiencia" },
+  { id: "instalaciones", value: "+5000", label: "Instalaciones" },
+  { id: "anios", value: "+40", label: "Años de experiencia" },
   { id: "zonas", value: "2", label: "Zonas — CABA y GBA" },
   { id: "matriculado", value: "★", label: "Gasista matriculado" },
 ];
@@ -145,7 +145,7 @@ export const aboutContent: AboutContent = {
     "Somos Insagas, empresa especializada en servicios integrales de gas para matriculados y particulares. Realizamos presentaciones ante Metrogas y Naturgy, asesoramiento y consultoría técnica, confección de planos y gestión de trámites ante distribuidoras. Además, ofrecemos venta de materiales para instalaciones de gas natural: piezas epoxi, reguladores y válvulas solenoides para uso comercial e industrial. Consultanos por presupuestos, asistencia técnica o catálogo de productos.",
   matricula: "XXXXXXXXX",
   zonaCobertura: "CABA y Gran Buenos Aires",
-  copyrightYear: 2025,
+  copyrightYear: 2026,
   address: "Av. Rivadavia 9181, local en esquina (rejas grises)",
   horarios: "Lunes a Viernes: 09:30 – 13:30 hs / 14:30 – 17:00 hs",
   horarioAtencionPresencial: "Atención presencial (presentaciones o plano) SOLO CON TURNO",

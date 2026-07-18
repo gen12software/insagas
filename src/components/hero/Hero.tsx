@@ -2,8 +2,8 @@ import Image from "next/image";
 import { whatsappUrl, catalogoUrl } from "@/config/links";
 
 const heroStats = [
-  { value: "+1500", label: "Instalaciones" },
-  { value: "+15", label: "Años de experiencia" },
+  { value: "+5000", label: "Instalaciones" },
+  { value: "+40", label: "Años de experiencia" },
   { value: "CABA / GBA", label: "Zona de cobertura" },
 ];
 

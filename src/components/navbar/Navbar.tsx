@@ -40,7 +40,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 h-16 border-b border-line-mid bg-[rgba(22,22,22,0.94)] backdrop-blur-[16px]">
-      <div className="mx-auto flex h-full max-w-content items-center justify-between px-6 md:px-12">
+      <div className="mx-auto flex h-full max-w-content items-center justify-between px-6 md:px-20">
         {/* Logo lockup */}
         <a
           href="#inicio"
